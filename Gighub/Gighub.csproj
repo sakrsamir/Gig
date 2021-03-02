@@ -198,14 +198,29 @@
     <Compile Include="Migrations\202103021144546_intailmodel.Designer.cs">
       <DependentUpon>202103021144546_intailmodel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202103021222313_Creategigtable.cs" />
+    <Compile Include="Migrations\202103021222313_Creategigtable.Designer.cs">
+      <DependentUpon>202103021222313_Creategigtable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103021256554_OverideConventionsForGigAndGener.cs" />
+    <Compile Include="Migrations\202103021256554_OverideConventionsForGigAndGener.Designer.cs">
+      <DependentUpon>202103021256554_OverideConventionsForGigAndGener.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\Genre.cs" />
+    <Compile Include="Models\Gig.cs" />
+    <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-Gighub-20210302014037.mdf" />
+    <Content Include="App_Data\aspnet-Gighub-20210302014037_log.ldf">
+      <DependentUpon>aspnet-Gighub-20210302014037.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -263,9 +278,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
   </ItemGroup>
@@ -284,6 +297,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202103021144546_intailmodel.resx">
       <DependentUpon>202103021144546_intailmodel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103021222313_Creategigtable.resx">
+      <DependentUpon>202103021222313_Creategigtable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103021256554_OverideConventionsForGigAndGener.resx">
+      <DependentUpon>202103021256554_OverideConventionsForGigAndGener.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
