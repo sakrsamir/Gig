@@ -212,6 +212,10 @@
     <Compile Include="Migrations\202103021326165_PopulateData.Designer.cs">
       <DependentUpon>202103021326165_PopulateData.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202103031052139_AddForginKeyPropertiesToGig.cs" />
+    <Compile Include="Migrations\202103031052139_AddForginKeyPropertiesToGig.Designer.cs">
+      <DependentUpon>202103031052139_AddForginKeyPropertiesToGig.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -314,6 +318,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202103021326165_PopulateData.resx">
       <DependentUpon>202103021326165_PopulateData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103031052139_AddForginKeyPropertiesToGig.resx">
+      <DependentUpon>202103031052139_AddForginKeyPropertiesToGig.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

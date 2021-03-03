@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 
 namespace Gighub.Models
 {
@@ -12,6 +9,8 @@ namespace Gighub.Models
 
         // who use it
         [Required]
+        public string ArtistId { get; set; }
+
         public ApplicationUser Artist { get; set; }
 
         // when this going to happen
@@ -23,6 +22,8 @@ namespace Gighub.Models
         public String Venue { get; set; }
 
         [Required]
+        public byte GenreId { get; set; }
+
         public Genre Genre { get; set; }
 
     }
