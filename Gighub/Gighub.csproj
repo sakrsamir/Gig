@@ -236,9 +236,14 @@
     <Compile Include="Migrations\202103041318334_AddAttendance.Designer.cs">
       <DependentUpon>202103041318334_AddAttendance.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202103051404373_AddFollowingTodomainModel.cs" />
+    <Compile Include="Migrations\202103051404373_AddFollowingTodomainModel.Designer.cs">
+      <DependentUpon>202103051404373_AddFollowingTodomainModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Attendance.cs" />
+    <Compile Include="Models\Following.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\Gig.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -358,6 +363,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202103041318334_AddAttendance.resx">
       <DependentUpon>202103041318334_AddAttendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103051404373_AddFollowingTodomainModel.resx">
+      <DependentUpon>202103051404373_AddFollowingTodomainModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
