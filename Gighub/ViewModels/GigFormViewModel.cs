@@ -7,6 +7,7 @@ namespace Gighub.ViewModels
 {
     public class GigFormViewModel
     {
+        public int Id { get; set; }
         [Required]
         public string Venue { get; set; }
 
@@ -23,7 +24,13 @@ namespace Gighub.ViewModels
 
         public IEnumerable<Genre> Genres { get; set; }
 
-
+        public string Heading { get; set; }
+        public string Action {
+            get
+            {
+                return (Id != 0) ? "Update" : "Create";
+            }
+        }
         // controller is manager cordante what should we do next only 
         // in oop we have a principle called information expert that should do this
         public DateTime GetDatetime()
