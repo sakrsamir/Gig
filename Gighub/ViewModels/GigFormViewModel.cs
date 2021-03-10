@@ -1,7 +1,11 @@
-﻿using Gighub.Models;
+﻿using Gighub.Controllers;
+using Gighub.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq.Expressions;
+using System.Web.Mvc;
+
 
 namespace Gighub.ViewModels
 {
@@ -28,7 +32,19 @@ namespace Gighub.ViewModels
         public string Action {
             get
             {
-                return (Id != 0) ? "Update" : "Create";
+
+                // change name of action dynamic if name is chaged this upadte names 
+                Expression<System.Func<GigsController, ActionResult>> Update =
+                    (c => c.Update(null));
+
+                Expression<System.Func<GigsController, ActionResult>> Create =
+                    (c => c.Create(null));
+
+                var action = (Id != 0) ? Update : Create;
+                var actionName = (action.Body as MethodCallExpression).Method.Name;
+
+                //return (Id != 0) ? "Update" : "Create";
+                return actionName;
             }
         }
         // controller is manager cordante what should we do next only 
