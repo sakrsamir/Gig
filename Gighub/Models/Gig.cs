@@ -6,6 +6,7 @@ namespace Gighub.Models
     public class Gig
     {
         public int Id { get; set; }
+        public bool IsCanceled { get; set; }
 
         // who use it
         [Required]
