@@ -95,6 +95,13 @@
                         return compiled({ allNotifications: notifications });
                     },
                     placement: "bottom"
+                }).on("show.bs.popover", function () {
+                    $.post("api/notifications/MarkAsRead")
+                        .done(function () {
+                            $(".js-notification-count")
+                                .text("")
+                                .addClass("hide");
+                        });
                 });
 
 

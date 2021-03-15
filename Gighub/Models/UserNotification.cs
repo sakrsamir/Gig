@@ -38,5 +38,12 @@ namespace Gighub.Models
         {
 
         }
+        public void Read()
+        {
+            if (!isRead)
+            {
+                isRead = true;
+            }
+        }
     }
 }
