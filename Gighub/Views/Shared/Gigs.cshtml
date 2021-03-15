@@ -1,8 +1,23 @@
 ﻿@model Gighub.ViewModels.GigsViewModel
 @{
-    ViewBag.Title = "Home Page";
+                /**/
+
+                ViewBag.Title = "Home Page";
 }
 <h1>@Model.Heading</h1>
+@using (Html.BeginForm("Search", "Gigs"))
+{
+    <div class="form-group">
+        <div id="searchGigs" class="input-group">
+            @Html.TextBoxFor(m => m.SearchTerm, new { @class = "form-control" })
+            <span class="input-group-addon">
+                <i class="glyphicon glyphicon-search" ></i>
+            </span>
+        </div>
+        
+    </div>
+    
+}
 <ul class="gigs voffset4">
     @foreach (var item in Model.UpcomingGigs)
     {
@@ -14,13 +29,13 @@
                 <div class="day">
                     @item.DateTime.ToString("d ")
                 </div>
-            </div>               
+            </div>
             <div class="details">
                 <span class="artist">
                     @item.Artist.Name
                     @if (item.IsCanceled)
                     {
-                        <span class="label-warning" >Canceled</span>
+                        <span class="label-warning">Canceled</span>
                     }
                     @if (Model.ShowActions)
                     {
@@ -32,11 +47,11 @@
                     @item.Genre.Name
                 </span>
 
-                @if (Model.ShowActions&&!item.IsCanceled)
+                @if (Model.ShowActions && !item.IsCanceled)
                 {
                     <button data-gig-id="@item.Id" class="btn btn-default btn-sm pull-right js-toggle-attendance">Going ?</button>
                 }
-                </div>
+            </div>
         </li>
     }
 </ul>
@@ -47,7 +62,7 @@
         $(document).ready(function () {
             $(".js-toggle-attendance").click(function (e) {
                 var button = $(e.target);
-                $.post("/api/attendances", { "gigId": button.attr("data-gig-id") } )
+                $.post("/api/attendances", { "gigId": button.attr("data-gig-id") })
                     .done(function () {
                         button
                             .removeClass("btn-default")
@@ -57,7 +72,7 @@
                     .fail(function () {
                         alert("Something failed");
                     })
-            });  
+            });
 
             $(".js-toggle-follow").click(function (e) {
                 var button = $(e.target);
@@ -68,11 +83,11 @@
                     .fail(function () {
                         alert("Something failed");
                     })
-            });    
+            });
 
         });
 
 
 
     </script>
-    }
+}
